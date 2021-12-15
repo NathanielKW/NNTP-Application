@@ -542,6 +542,15 @@ nonModeSwitchingCapabilities = ["VERSION 2", "IHAVE", "LIST ACTIVE NEWSGROUP"]
 readerCapabilities = ["VERSION 2", "READER", "LIST ACTIVE NEWSGROUP", "POST"]
 commandList = ["CAPABILITIES", "LIST", "GROUP", "LISTGROUP", "ARTICLE", "HEAD", "BODY", "STAT", "NEXT", "LAST", "NEWNEWS", "POST", "MODE READER", "HELP", "QUIT"]
 
+responseCodes = {"HELP_RESPONSE": "101 Help Text follows", "CAPABILITIES_RESPONSE": "101 Capability list:", "MODE_READER_POST_ALLOWED": "200 Reader mode, posting permitted", "SERVER_READY_READER": "200 NNTP Service Ready, posting allowed", "SERVER_READY_RESPONSE": "201 NNTP Service Ready, posting prohibited",
+                 "MODE_READER_POSTING_PROHIBITED": "201 Posting prohibited", "QUIT_RESPONSE": "205 NNTP Service exits normally", "FULL_NEWSGROUP": "211", "EMPTY_NEWSGROUP": "211 0 0 0", "LIST_ACTIVE_RESPONSE": "215 list of newsgroups follows",
+                 "LIST_NEWSGROUP_RESPONSE": "215 information follows", "ARTICLE_SUCCESS_RESPONSE": "220", "HEAD_SUCCESS_RESPONSE": "221", "BODY_SUCCESS_RESPONSE": "222",
+                 "STAT_SUCCESS_RESPONSE": "223", "LAST_SUCCESS": "223", "NEWNEWS_RESPONSE": "230 list of new articles by message-id follows", "IHAVE_SUCCESS": "235 Article transferred OK", "POST_SUCCESS": "240 Article received OK", "IHAVE_SEND": "335 Send it; end with <CR-LF>.<CR-LF>", "INITIAL_POST": "340 Input article; end with <CR-LF>.<CR-LF>", 
+                 "INVALID_NEWSGROUP": "411", "NO_NEWSGROUP_SELECTED_RESPONSE": "412 No newsgroup selected", "NO_ARTICLE_SELECTED_RESPONSE": "420 No article selected", 
+                 "NO_NEXT_ARTICLE_RESPONSE": "421 No next article in this group", "NO_PREVIOUS_ARTICLE_RESPONSE": "422 No previous article", "ARTICLE_NOT_PRESENT_RESPONSE": "423 No article with that number", 
+                 "ARTICLE_NOT_FOUND_RESPONSE": "430 No such article found","IHAVE_DUPLICATE": "435 Duplicate", "IHAVE_TRY_AGAIN": "436 Retry later", "IHAVE_FAILED_NO_RETRY": "437 Article rejected; don't send again", "POSTING_NOT_PERMITTED": "440 Posting not permitted", "POST_FAILED": "441 Posting failed", "BAD_COMMAND_RESPONSE": "500 Bad command:", "BAD_SYNTAX_RESPONSE": "501 Bad Syntax in command", 
+                 "BAD_KEYWORD_RESPONSE": "501 Invalid keyword in command", "NO_READER_CAPABILITY": "502 Transit service only"}
+
 # create a seperate thread that automatically sends out IHAVE commands
 automatedIHAVE = IHAVEAutomation()
 automatedIHAVE.start()
