@@ -1,0 +1,2 @@
+README:
+	cat README.md
